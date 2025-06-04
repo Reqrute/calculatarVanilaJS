@@ -1,56 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Калькулятор</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <div class="theme-toggle">
-    <label class="switch">
-      <input type="checkbox" id="themeSwitcher">
-      <span class="slider"></span>
-    </label>
-  </div>
-
-  <div class="calculator">
-    <div class="display" id="display">0</div>
-
-    <div class="buttons"> 
-      <button class="btn btn-clear" data-action="clear">C</button>
-      <button class="btn btn-sign" data-action="toggle-sign">±</button>
-      <button class="btn btn-percent" data-action="percent">%</button>
-      <button class="btn btn-operator" data-action="divide">÷</button>
-
-      <button class="btn" data-value="7">7</button>
-      <button class="btn" data-value="8">8</button>
-      <button class="btn" data-value="9">9</button>
-      <button class="btn btn-operator" data-action="multiply">×</button>
-
-      <button class="btn" data-value="4">4</button>
-      <button class="btn" data-value="5">5</button>
-      <button class="btn" data-value="6">6</button>
-      <button class="btn btn-operator" data-action="subtract">−</button>
-
-      <button class="btn" data-value="1">1</button>
-      <button class="btn" data-value="2">2</button>
-      <button class="btn" data-value="3">3</button>
-      <button class="btn btn-operator" data-action="add">+</button>
-
-      <button class="btn btn-zero" data-value="0">0</button>
-      <button class="btn" data-value=".">.</button>
-      <button class="btn btn-equal" data-action="equals">=</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitcher" />
+        <span class="slider"></span>
+      </label>
     </div>
-  </div>
 
-  <script>
-    const themeSwitcher = document.getElementById('themeSwitcher');
-    themeSwitcher.addEventListener('change', () => {
-      document.body.classList.toggle('light-theme');
-    });
-  </script>
+    <div class="calculator">
+      <div class="display" id="display">0</div>
 
-</body>
+      <div class="buttons">
+        <button class="btn btn-clear" data-action="clear">C</button>
+        <button class="btn btn-sign" data-action="toggle-sign">±</button>
+        <button class="btn btn-percent" data-action="percent">%</button>
+        <button class="btn btn-operator" data-action="divide">÷</button>
+
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn btn-operator" data-action="multiply">×</button>
+
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn btn-operator" data-action="subtract">−</button>
+
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn btn-operator" data-action="add">+</button>
+
+        <button class="btn btn-zero" data-value="0">0</button>
+        <button class="btn" data-value=".">.</button>
+        <button class="btn btn-equal" data-action="equals">=</button>
+      </div>
+    </div>
+
+    <script>
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      themeSwitcher.addEventListener('change', () => {
+        document.body.classList.toggle('light-theme');
+      });
+    </script>
+  </body>
 </html>
