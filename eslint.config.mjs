@@ -1,12 +1,11 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import * as globals from 'globals';
 import { defineConfig } from 'eslint/config';
-import prettier from 'eslint-plugin-prettier';
-import eslintPluginImport from 'eslint-plugin-import';
+import * as eslintPluginImport from 'eslint-plugin-import';
 
 export default defineConfig([
   {
-    files: ['*.{js}'],
+    files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -18,11 +17,9 @@ export default defineConfig([
     plugins: {
       js,
       import: eslintPluginImport,
-      prettier,
     },
     rules: {
       ...js.configs.recommended.rules,
-      'prettier/prettier': 'error',
       'no-console': 'warn',
       'import/order': [
         'warn',
