@@ -1,28 +1,43 @@
 {
   "name": "project",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "build": "webpack",
-  "start": "webpack serve --open",
-  "lint": "eslint src/**/*.js",
-  "format": "prettier --write src/**/*.{js,json,css,html}"
-},
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs}": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "prepare": "npx simple-git-hooks",
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "lint": "eslint --ext .js,.mjs,.cjs src/",
+    "format": "prettier --write src/**/*.{js,json,css,html}"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
+    "@eslint/js": "^9.28.0",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.4.1",
+    "globals": "^16.2.0",
     "html-webpack-plugin": "^5.6.3",
+    "lint-staged": "^16.1.0",
     "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.13.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",

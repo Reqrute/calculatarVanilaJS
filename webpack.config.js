@@ -1,35 +1,41 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-module.exports = {
-  entry: './src/index.js',       
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
+  entry: './src/js/main.js',
   output: {
-    filename: 'main.js',        
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,                 
+    filename: 'main.js',
+    path: resolve(__dirname, 'dist'),
+    publicPath: '/',
+    clean: true,
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
+      template: './src/index.html',
+    }),
   ],
   devServer: {
     static: './dist',
     port: 3000,
-    open: true
+    open: true,
   },
-  mode: 'development'
+  mode: 'development',
 };
