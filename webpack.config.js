@@ -11,7 +11,6 @@ export default {
   output: {
     filename: 'main.js',
     path: resolve(__dirname, 'dist'),
-    publicPath: '/',
     clean: true,
   },
   module: {
