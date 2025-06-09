@@ -153,7 +153,6 @@ input:checked + .slider:before {
   background-color: #5de68a;
 }
 
-/* Адаптивность */
 @media (max-width: 400px) {
   .calculator {
     width: 90vw;
